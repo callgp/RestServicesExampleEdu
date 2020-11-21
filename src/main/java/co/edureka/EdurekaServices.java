@@ -4,6 +4,7 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 
 @Path("edureka")
 public class EdurekaServices {
@@ -30,6 +31,14 @@ public class EdurekaServices {
 		@Path("{name}/{course}")
 		@Produces("text/html")
 		public String enquiry(@PathParam("name") String name,@PathParam("course") String course){
+			return " customer name" +name+ "course is" +course;
+		}
+		
+		
+		@GET
+		@Path("/enquiry")
+		@Produces("text/html")
+		public String enquiry1(@QueryParam("name") String name,@QueryParam("course") String course){
 			return " customer name" +name+ "course is" +course;
 		}
 		
