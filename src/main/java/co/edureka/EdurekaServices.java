@@ -1,6 +1,8 @@
 package co.edureka;
 
+import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -40,6 +42,13 @@ public class EdurekaServices {
 		@Produces("text/html")
 		public String enquiry1(@QueryParam("name") String name,@QueryParam("course") String course){
 			return " customer name" +name+ "course is" +course;
+		}
+		
+		@POST
+		@Path("/registerCustomer")
+		@Produces("text/html")
+		public String register(@FormParam("name") String name,@FormParam("age") String age){
+			return " customer name" +name+ "course is" +age;
 		}
 		
 //	}
